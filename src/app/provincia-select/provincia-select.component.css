@@ -1,0 +1,38 @@
+
+#section2{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:40px;
+    position: static;
+}
+#lupa{
+    margin-left: 10px;
+}
+#justo{
+    color: white; text-shadow: black 0.2em 0.2em 0.2em
+}
+
+
+#tituloProvincia{
+    text-align:center;
+    margin-top:10px;
+    justify-content: center;
+}
+
+#h11{
+    font-size: 50px;
+    margin-top:20px;
+    color:rgb(127, 197, 255);
+    text-transform:uppercase;
+}
+#btn1{
+    margin-top:40px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+/*esto para el boton search*/

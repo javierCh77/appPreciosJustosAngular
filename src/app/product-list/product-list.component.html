@@ -1,0 +1,68 @@
+
+<div id="back">
+    <img routerLink="/home"  id="pointer"src="../../assets/img/back.png" width="50px" alt="">
+</div>
+
+<div id="section2" class="container-fluid">
+    <div id="barCode" type="submit">
+        <img src="../../assets/img/filter.png" width="40px" alt="">
+    </div>
+    <div class="col col-sm-6">
+        <input [(ngModel)]="filtroTexto"
+        (ngModelChange)="onFiltroTextoChange($event)" type="text" class="form-control" id="filtroTexto" placeholder="Busca un Producto">
+    </div>
+    <div id="lupa" type="submit">
+        <img src="../../assets/img/buscar.png" width="35px" alt="">
+    </div>
+    <div id="slide" class="col-sm-4">
+        <input
+            [(ngModel)]="filtroPrecio"
+            (ngModelChange)="onFiltroPrecioChange($event)"
+            [max]="precioMaximo"
+            type="range"
+            class="form-range"
+            id="filtroPrecio"
+        >
+        <label for="filtroPrecio" class="form-label">Precio máximo - seleccionado: ${{filtroPrecio}}</label>
+    </div>
+</div>
+<!-- aqui la provincia seleccionada-->
+
+<div>
+    <h1 id="title">{{provinciaSlctd}}</h1>
+</div>
+
+
+<!--  aqui la parte del contenido de los productos-->
+
+<div class="row">
+    <div id="cantidadProducto">
+        <h5>Cantidad de productos: {{productosFiltrados.length}}</h5>
+    </div>
+</div>
+
+<!-- aqui las cards-->
+<div id="tabla" class="container" *ngIf="productosFiltrados.length > 0; else noHayProductosBlock" >
+    <table  class="table table-dark table-hover">
+        <thead class="table-primary" >
+          <tr>
+            <th scope="col-3">EAN</th>
+            <th scope="col-6">Descripcion</th>
+            <th scope="col-3">Precio</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let producto of productosFiltrados" id="manito">
+            <tr>
+                 <td class="col-2">{{producto.ean}}</td>
+                 <td class="col-8">{{producto.nombre}}</td>
+                 <td class="col-2">${{producto.precio}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+</div>
+<ng-template #noHayProductosBlock>
+    <div class="alert alert-warning" role="alert">
+        No hay productos para mostrar
+    </div>
+</ng-template>

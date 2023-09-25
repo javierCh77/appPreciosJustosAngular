@@ -1,0 +1,29 @@
+
+
+<div class="container" id="tituloProvincia">
+    <div>
+        <h3>¿En qué provincia o región vivís?</h3>
+    </div>
+    <div>
+        <h1 id="h11">{{provinciaSeleccionada.nombre}}</h1>   
+    </div>
+</div>
+<!-- AQUI LA SECCION DEL SELECT DE PROVINCIAS-->
+
+<div id="section2" class="container-fluid">
+    <div class="col col-lg-6">
+            <select class="form-select" name="provincias" id="" [(ngModel)]="provinciaSeleccionada">
+                <option value="" >Seleccione una Provincia</option>
+                <option *ngFor="let provincia of provincia" [ngValue]="provincia">
+                    {{provincia.nombre}}</option>
+            </select>
+    </div>
+</div>
+
+<!-- AQUI LA SECCION PARA MOSTRAR LA TABLA DE PROVINCIAS-->
+        
+
+<div id = "btn1">
+    
+    <button routerLink="productos" (click)= "mostrar()"  type="button" class="btn btn-success"> Ver lista de Productos</button>
+</div>

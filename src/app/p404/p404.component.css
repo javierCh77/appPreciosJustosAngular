@@ -1,0 +1,21 @@
+#pError{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-top: 1.5625rem;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+#tGrande{
+    font-size: 140px;
+}
+#lego{
+    justify-content: center;
+    text-align: center;
+}
+#txt{
+    text-align: center;
+}
